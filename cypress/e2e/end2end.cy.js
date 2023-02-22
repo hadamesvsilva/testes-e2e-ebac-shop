@@ -18,11 +18,11 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     beforeEach(() => {
         cy.visit('minha-conta')
     });
-
+    
     it.only('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
         /*registro/detalhesdaconta*/
         let emailfaker2 = faker.internet.email()
-        cy.cadastro(emailfaker2, 'senha!@#forte', 'Fábio', 'Araújo')
+        cy.cadastro(emailfaker2, 'avistaouaprazo210l', 'André', 'Mariano')
         cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
         /*cadastroenderecofaturamento*/
         EnderecoPage.editarEnderecoFaturamento(
@@ -53,19 +53,17 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         )
         cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.')
         /*produtos*/
-        var quantidade = 4
-        
+        //1
         cy.get('#primary-menu > .menu-item-629 > a').click()
-        cy.get('[class="product-block grid"]')
-            .contains('Abominable Hoodie').click()
-            cy.get('.button-variable-item-XL').click()
-            cy.get('.button-variable-item-XL').click()
-            cy.get('.button-variable-item-Green').click()
-            cy.get('.input-text').clear().type(quantidade)
-            cy.get('.single_add_to_cart_button').click()
-
-            cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
-            cy.get('.woocommerce-message').should('contain', quantidade + ' × “Abominable Hoodie” foram adicionados no seu carrinho.')
+        cy.addProdutos('Abominable Hoodie', 'XL', 'Green', 1)
+        //2
+        cy.get('#primary-menu > .menu-item-629 > a').click()
+        cy.get(':nth-child(2) > .page-numbers').click()
+        cy.addProdutos('Ajax Full-Zip Sweatshirt', 'M', 'Red', 2)
+        //3
+        cy.get('#primary-menu > .menu-item-629 > a').click()
+        cy.get(':nth-child(2) > .page-numbers').click()
+        cy.addProdutos('Arcadio Gym Short', '34', 'Blue', 1)
         /*carrinho*/
         cy.get('.woocommerce-message > .button').click()
         cy.get('.checkout-button').click()
@@ -76,6 +74,5 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.get('#terms').click()
         cy.get('#place_order').click()
         cy.get('.woocommerce-notice').should('contain', 'Obrigado. Seu pedido foi recebido.')
-
     }); 
 })
