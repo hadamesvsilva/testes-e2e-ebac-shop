@@ -1,0 +1,41 @@
+[
+    {
+        "nome": "Ana",
+        "sobrenome": "Lucia",
+        "empresa": "EBAC",
+        "endereco": "Av. Paulista",
+        "numero": "2000",
+        "pais": "Brasil",
+        "cidade": "São Paulo",
+        "estado": "São Paulo",
+        "cep": "01000-100",
+        "telefone": "1199999999",
+        "email": "teste@teste.com"
+    },
+    {
+        "nome": "Aborigene",
+        "sobrenome": "Sebs",
+        "empresa": "HG",
+        "endereco": "Av. Tão Distante",
+        "numero": "456",
+        "pais": "Brasil",
+        "cidade": "Belém",
+        "estado": "Pará",
+        "cep": "45888-963",
+        "telefone": "64956564411",
+        "email": "maisumteste@qualquer.com"
+    },
+    {
+        "nome": "Eu",
+        "sobrenome": "Mesmo",
+        "empresa": "Alguma",
+        "endereco": "Av. do Teste",
+        "numero": "9032",
+        "pais": "Brasil",
+        "cidade": "Cuiabá",
+        "estado": "Mato Grosso",
+        "cep": "65465-163",
+        "telefone": "45986867755",
+        "email": "emailaleatorio@aleatorio.com"
+    }
+]
