@@ -19,7 +19,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.visit('minha-conta')
     });
     
-    it.only('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
+    it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
         /*registro/detalhesdaconta*/
         let emailfaker2 = faker.internet.email()
         cy.cadastro(emailfaker2, 'avistaouaprazo210l', 'André', 'Mariano')
@@ -58,11 +58,9 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.addProdutos('Abominable Hoodie', 'XL', 'Green', 1)
         //2
         cy.get('#primary-menu > .menu-item-629 > a').click()
-        cy.get(':nth-child(2) > .page-numbers').click()
-        cy.addProdutos('Ajax Full-Zip Sweatshirt', 'M', 'Red', 2)
+        cy.addProdutos('Ajax Full-Zip Sweatshirt', 'XL', 'Blue', 2)
         //3
         cy.get('#primary-menu > .menu-item-629 > a').click()
-        cy.get(':nth-child(2) > .page-numbers').click()
         cy.addProdutos('Arcadio Gym Short', '34', 'Blue', 1)
         /*carrinho*/
         cy.get('.woocommerce-message > .button').click()
