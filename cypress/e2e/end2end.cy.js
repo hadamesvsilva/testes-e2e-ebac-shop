@@ -61,7 +61,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.addProdutos('Ajax Full-Zip Sweatshirt', 'XL', 'Blue', 2)
         //3
         cy.get('#primary-menu > .menu-item-629 > a').click()
-        cy.addProdutos('Arcadio Gym Short', '34', 'Blue', 1)
+        cy.addProdutos('Arcadio Gym Short', '33', 'Red', 1)
         /*carrinho*/
         cy.get('.woocommerce-message > .button').click()
         cy.get('.checkout-button').click()
