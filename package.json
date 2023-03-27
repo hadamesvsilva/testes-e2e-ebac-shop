@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run cy:run",
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:dashboard": "",
-    "cy:report": ""
+    "cy:report": "",
+    "cy:run-ci": "start-server-and-test start http://localhost:3000/usuarios test"
   },
   "repository": {
     "type": "git",
